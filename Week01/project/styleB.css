@@ -1,0 +1,33 @@
+span{
+    display: flex;
+    position: relative;
+    height: 100%;
+}
+
+div{
+    display: inline-block;
+    white-space: nowrap; 
+
+    width: 90px;
+    height: 150px;
+    margin-right: 10px;
+    font: 40px Tahoma;
+    padding-left: 10px;
+    position: relative;
+    background-color: #dfe1e7;
+    
+    border-left: dotted #D0D0FF 10px;
+
+}
+.div1{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+}
+div:hover{
+    background-color: yellow;
+    color: goldenrod;
+    cursor: pointer;
+}
+
