@@ -34,7 +34,7 @@ class DatePicker{
             day_of_week.appendChild(aa);
         }
         // Code for div Month
-        var hash=new Array();
+        var hash=[];
         hash[0] = "January";
         hash[1] = "February";
         hash[2] = "March";
@@ -49,18 +49,19 @@ class DatePicker{
         hash[11] = "December";
         Month.innerHTML=hash[this.date.getMonth()]+` ${this.date.getFullYear()}`;
         // Code for div date_grid
-        var Day=new Array();
-        Day[1,3,5,7,8,10,12]=31;
-        Day[2]=28;
-        Day[4,6,9,11]=30;
-        for(let i=1;i<=Day[this.date.getMonth()+1];i++){
+
+        for(let i=1;i<=this.findDayOfMonth();i++){
             let ddiv=document.createElement("BUTTON");
             ddiv.innerHTML=i;
-            if(i==1){
+            date_grid.appendChild(ddiv);
+            if(i===1){
                 let new_date=new Date(`${this.date.getMonth()+1}`+"/1/"+`${this.date.getFullYear()}`);
                 ddiv.style.gridColumn=new_date.getDay()+1;
             }
-            date_grid.appendChild(ddiv);
+            
         }
+    }
+    findDayOfMonth(){
+        return new Date(this.date.getFullYear(), this.date.getMonth() + 1, 0).getDate();
     }
 }
